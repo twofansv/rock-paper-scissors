@@ -31,49 +31,49 @@ switch(numberChoice){
 
 
 
-versusChoice();
-
-
 function versusChoice() {
 
+    let compareChoice;
+
     if (getComputerChoice() == 'Rock' && getHumanChoice() == 'Paper') {
-        console.log('You Won! Paper beats Rock!');
+        compareChoice = 'You won! Paper beats Rock!';
     }
     else if (getComputerChoice() == 'Rock' && getHumanChoice() == 'Scissors') {
-        console.log('You Lose! Rock beats Scissors!')
+        compareChoice = 'You lose! Rock beats Scissors!';
     }
     else if (getComputerChoice() == 'Rock' && getHumanChoice() == 'Rock') {
-        console.log('Draw! Both is Rock!')
+        compareChoice = 'Draw! Both are Rocks!';
     }
     else if (getComputerChoice() == 'Paper' && getHumanChoice() == 'Scissors') {
-        console.log('You Won! Scissors beats Paper!')
+        compareChoice = 'You won! Scissors beats Paper!';
     }
     else if (getComputerChoice() == 'Paper' && getHumanChoice() == 'Rock') {
-        console.log('You Lose! Paper beats rock!')
+        compareChoice = 'You lose! Paper beats Rock!';
     }
     else if (getComputerChoice() == 'Paper' && getHumanChoice() == 'Paper') {
-        console.log('Draw! Both is Paper!')
+        compareChoice = 'Draw! Both are Paper!';
     }
     else if (getComputerChoice() == 'Scissors' && getHumanChoice() == 'Rock') {
-        console.log('You Won! Rock beats Scissors!')
+        compareChoice = 'You Won! Rock beats Scissors!';
     }
     else if (getComputerChoice() == 'Scissors' && getHumanChoice() == 'Paper') {
-        console.log('You Lose! Scissors beats Paper!')
+        compareChoice = 'You lose! Scissors beats Paper!';
     }
     else if (getComputerChoice() == 'Scissors' && getHumanChoice() == 'Scissors') {
-        console.log('Draw! Both is Scissors!')
+        compareChoice = 'Draw! Both are Scissors!';
     }
+    return compareChoice;
     
 }
 
 function getHumanChoice() {
     let humanChoice = prompt('Input number for: 1. Rock 2. Paper 3. Scissors');
     switch(humanChoice){
-        case 1:
+        case '1':
             return 'Rock'
-        case 2:
+        case '2':
             return 'Paper'
-        case 3:
+        case '3':
             return 'Scissors'
     }
 }
@@ -82,7 +82,7 @@ function getHumanChoice() {
 
 
 
-
+console.log(versusChoice());
 
 
 
