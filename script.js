@@ -69,15 +69,19 @@ function versusChoice() {
 }
 
 function getHumanChoice() {
-    let humanChoice = prompt('Input number for: 1. Rock 2. Paper 3. Scissors');
-    switch(humanChoice){
-        case '1':
-            return 'Rock'
-        case '2':
-            return 'Paper'
-        case '3':
-            return 'Scissors'
+    let humanChoice = prompt('Rock? Paper? or Scissors?');
+    humanChoice = humanChoice.toLowerCase();
+
+    if (humanChoice == 'rock')  {
+       return 'Rock'
     }
+    else if (humanChoice == 'paper'){
+        return 'Paper'
+    }
+    else if (humanChoice == 'scissors'){
+        return 'Scissors'
+    }
+    
 }
 
 
