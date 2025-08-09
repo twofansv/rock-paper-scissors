@@ -5,8 +5,7 @@
 // RANDOM NUMBER GENERATOR
 
 
-const humanScore = 0;
-const computerScore = 0;
+
 
 
 function getComputerChoice(){
@@ -25,6 +24,24 @@ let instanceOfComputer = getComputerChoice();
 let instanceOfHuman = getHumanChoice();
 
 console.log('Computer chose ' + instanceOfComputer + ' and you chose ' + instanceOfHuman + ' so...');
+
+function playGame(versusChoice){
+    let humanScore = 0;
+    let computerScore = 0;
+    
+
+    for (let round = 0; round < 5; round++) {
+        let result = versusChoice();
+
+        if (result.includes(`won`)) {
+            humanScore++;
+        }
+        else if (result.includes('lose')) {
+            computerScore++;
+        }
+    }
+    return `Your Score: ${humanScore} and Bot Score: ${computerScore}`
+}
 
 function versusChoice(instanceOfComputer, instanceOfHuman) {
 
@@ -61,5 +78,5 @@ function getHumanChoice() {
     }
 }
 
-console.log(versusChoice(instanceOfComputer, instanceOfHuman));
-
+//console.log(versusChoice(instanceOfComputer, instanceOfHuman));
+console.log(playGame());
