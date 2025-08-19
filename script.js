@@ -22,16 +22,19 @@ switch(numberChoice){
 
 let instanceOfComputer = getComputerChoice();
 let instanceOfHuman = getHumanChoice();
+let versusInstance = versusChoice();
 
 console.log('Computer chose ' + instanceOfComputer + ' and you chose ' + instanceOfHuman + ' so...');
 
-function playGame(versusChoice){
+function playGame(){
     let humanScore = 0;
     let computerScore = 0;
     
+    
 
     for (let round = 0; round < 5; round++) {
-        let result = versusChoice();
+        let result = versusChoice(instanceOfComputer, instanceOfHuman);
+        
 
         if (result.includes(`won`)) {
             humanScore++;
