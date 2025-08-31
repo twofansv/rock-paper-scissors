@@ -20,8 +20,8 @@ switch(numberChoice){
     }
 }
 
-let instanceOfComputer = getComputerChoice();
-let instanceOfHuman = getHumanChoice();
+//let instanceOfComputer = getComputerChoice();
+//let instanceOfHuman = getHumanChoice();
 //let versusInstance = versusChoice();
 
 
