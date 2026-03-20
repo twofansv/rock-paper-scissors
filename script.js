@@ -20,9 +20,15 @@ switch(numberChoice){
     }
 }
 
-//let instanceOfComputer = getComputerChoice();
-//let instanceOfHuman = getHumanChoice();
-//let versusInstance = versusChoice();
+function playGame(){
+    
+    let humanScore = 0;
+    let computerScore = 0;
+
+    console.log('Game over!')
+    console.log(`Final Score -> You: ${humanScore} ` + `Bot: ${computerScore}`)
+    
+}
 
 
 
