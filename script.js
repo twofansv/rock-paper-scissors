@@ -5,6 +5,14 @@
 // RANDOM NUMBER GENERATOR
 
 
+const btns = document.querySelectorAll('.btn');
+
+btns.forEach (btn => {
+    btn.addEventListener('click', playGame);
+})
+
+
+
 
 
 
@@ -68,4 +76,4 @@ function getHumanChoice() {
 }
 
 //console.log(versusChoice(instanceOfComputer, instanceOfHuman));
-playGame();
+//playGame();
