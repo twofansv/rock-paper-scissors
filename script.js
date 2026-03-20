@@ -25,31 +25,6 @@ switch(numberChoice){
 //let versusInstance = versusChoice();
 
 
-function playGame(){
-    
-    let humanScore = 0;
-    let computerScore = 0;
-    
-    for (let round = 0; round < 5; round++) {
-        let gameComputer = getComputerChoice();
-        let gameHuman = getHumanChoice();
-   
-        let result = versusChoice(gameComputer, gameHuman);
-        console.log('Computer chose ' + gameComputer + ' and you chose ' + gameHuman + ' so...');
-        console.log(result);
-
-        if (result.includes(`won`)) {
-            humanScore++;
-        }
-        else if (result.includes('lose')) {
-            computerScore++;
-        }
-        console.log(`Your Score: ${humanScore} and Bot Score: ${computerScore}`)
-    }
-    console.log('Game over!')
-    console.log(`Final Score -> You: ${humanScore} ` + `Bot: ${computerScore}`)
-    
-}
 
 function versusChoice(instanceOfComputer, instanceOfHuman) {
 
