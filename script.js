@@ -7,11 +7,56 @@
 
 const btns = document.querySelectorAll('.btn');
 
-btns.forEach (btn => {
-    btn.addEventListener('click', playGame);
-})
+// const rock = document.querySelector('#Rock');
+// const paper = document.querySelector('#Paper');
+// const scissors = document.querySelector('#Scissors');
 
 
+// rock.addEventListener('click', () => getHumanChoice = 'rock');
+// paper.addEventListener('click', () => getHumanChoice = 'paper');
+// scissors.addEventListener('click', () => getHumanChoice = 'scissors');
+
+
+btns.forEach(button => {
+    button.addEventListener('click', () => {
+        getHumanChoice = button.id;
+    
+        playGame();
+    })
+});
+
+function getHumanChoice (choice) {
+    const humanChoice = choice;
+    return humanChoice;
+}
+
+
+function playGame(){
+    
+    let humanScore = 0;
+    let computerScore = 0;
+
+  
+    let gameComputer = getComputerChoice();
+    let gameHuman = getHumanChoice;
+   
+    let result = versusChoice(gameComputer, gameHuman);
+    console.log('Computer chose ' + gameComputer + ' and you chose ' + gameHuman + ' so...');
+    console.log(result);
+
+    if (result.includes(`won`)) {
+        humanScore++;
+    }
+    else if (result.includes('lose')) {
+        computerScore++;
+    }
+    console.log(`Your Score: ${humanScore} and Bot Score: ${computerScore}`)
+    
+    //console.log('Game over!')
+    console.log(`Final Score -> You: ${humanScore} ` + `Bot: ${computerScore}`)
+  
+    
+}
 
 
 
@@ -28,15 +73,6 @@ switch(numberChoice){
     }
 }
 
-function playGame(){
-    
-    let humanScore = 0;
-    let computerScore = 0;
-
-    console.log('Game over!')
-    console.log(`Final Score -> You: ${humanScore} ` + `Bot: ${computerScore}`)
-    
-}
 
 
 
@@ -60,20 +96,6 @@ function versusChoice(instanceOfComputer, instanceOfHuman) {
 
 }
 
-function getHumanChoice() {
-    let humanChoice = prompt('Rock? Paper? or Scissors?');
-    humanChoice = humanChoice.toLowerCase();
-
-    if (humanChoice == 'rock')  {
-       return 'Rock'
-    }
-    else if (humanChoice == 'paper'){
-        return 'Paper'
-    }
-    else if (humanChoice == 'scissors'){
-        return 'Scissors'
-    }
-}
 
 //console.log(versusChoice(instanceOfComputer, instanceOfHuman));
 //playGame();
