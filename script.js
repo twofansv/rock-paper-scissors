@@ -12,6 +12,8 @@ const paper = document.querySelector('#Paper');
 const scissors = document.querySelector('#Scissors');
 
 const score = document.querySelector('.score');
+const scoreInfo = document.querySelector('.scoreInfo');
+const rpsCompare = document.querySelector('.rpsCompare');
 const winLose = document.querySelector('.win-lose');
    
 
@@ -69,12 +71,12 @@ function playGame(){
 
     //IF win or NOT:
     let result = versusChoice(gameComputer, gameHuman);
-    console.log('Computer chose ' + gameComputer + ' and you chose ' + gameHuman + ' so...');
-    console.log(result);
+    rpsCompare.textContent = 'Computer chose ' + gameComputer + ' and you chose ' + gameHuman + ' so...';
+    scoreInfo.textContent = result;
     //
 
 
-    score.textContent = `Your Score: ${humanScore} and Bot Score: ${computerScore}`
+   
 
   
 
@@ -88,24 +90,32 @@ function playGame(){
         computerScore++;
     }
     //
-    
+    score.textContent = `Your Score: ${humanScore} and Bot Score: ${computerScore}`
+    //
+
 
     //IF player or computer reaches 5 score:
     if (humanScore == 5) {
-        console.log('Game over!')
-        console.log(`Final Score -> You: ${humanScore} ` + `Bot: ${computerScore}`)
+        winLose.textContent = 'Game over!';
+        winLose.textContent = `Final Score -> You: ${humanScore} ` + `Bot: ${computerScore}`;
 
         humanScore = 0;
         computerScore = 0;
+
+       
     }
     else if (computerScore == 5) {
-        console.log('Game over!')
-        console.log(`Final Score -> You: ${humanScore} ` + `Bot: ${computerScore}`)
+        winLose.textContent = 'Game over!';
+        winLose.textContent = `Final Score -> You: ${humanScore} ` + `Bot: ${computerScore}`;
 
         humanScore = 0;
         computerScore = 0;
+
+        
     }
     //
+
+    
 }
 
 
