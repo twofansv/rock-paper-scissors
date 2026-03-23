@@ -7,54 +7,91 @@
 
 const btns = document.querySelectorAll('.btn');
 
-// const rock = document.querySelector('#Rock');
-// const paper = document.querySelector('#Paper');
-// const scissors = document.querySelector('#Scissors');
+const rock = document.querySelector('#Rock');
+const paper = document.querySelector('#Paper');
+const scissors = document.querySelector('#Scissors');
 
 
-// rock.addEventListener('click', () => getHumanChoice = 'rock');
-// paper.addEventListener('click', () => getHumanChoice = 'paper');
-// scissors.addEventListener('click', () => getHumanChoice = 'scissors');
+rock.addEventListener('click', () => {
+    getHumanChoice = 'Rock'
 
-
-btns.forEach(button => {
-    button.addEventListener('click', () => {
-        getHumanChoice = button.id;
-    
-        playGame();
-    })
+    playGame();
 });
+
+paper.addEventListener('click', () => {
+    getHumanChoice = 'Paper'
+
+    playGame();
+});
+
+scissors.addEventListener('click', () => {
+    getHumanChoice = 'Scissors'
+
+    playGame();
+});
+
+
+
+
+
+// btns.forEach(button => {
+//     button.addEventListener('click', () => {
+//         getHumanChoice = button.id;
+    
+//         playGame();
+//     })
+// });
+
+
+
 
 function getHumanChoice (choice) {
     const humanChoice = choice;
     return humanChoice;
 }
 
+let humanScore = 0;
+let computerScore = 0;
+
 
 function playGame(){
     
-    let humanScore = 0;
-    let computerScore = 0;
 
-  
+
     let gameComputer = getComputerChoice();
     let gameHuman = getHumanChoice;
    
+
+    //IF win or NOT:
     let result = versusChoice(gameComputer, gameHuman);
     console.log('Computer chose ' + gameComputer + ' and you chose ' + gameHuman + ' so...');
     console.log(result);
 
+    //Scoring System:
     if (result.includes(`won`)) {
         humanScore++;
     }
     else if (result.includes('lose')) {
         computerScore++;
     }
+
+
     console.log(`Your Score: ${humanScore} and Bot Score: ${computerScore}`)
-    
-    //console.log('Game over!')
-    console.log(`Final Score -> You: ${humanScore} ` + `Bot: ${computerScore}`)
-  
+
+    if (humanScore == 5) {
+        console.log('Game over!')
+        console.log(`Final Score -> You: ${humanScore} ` + `Bot: ${computerScore}`)
+
+        humanScore = 0;
+        computerScore = 0;
+    }
+    else if (computerScore == 5) {
+        console.log('Game over!')
+        console.log(`Final Score -> You: ${humanScore} ` + `Bot: ${computerScore}`)
+
+        humanScore = 0;
+        computerScore = 0;
+    }
     
 }
 
