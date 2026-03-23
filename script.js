@@ -11,6 +11,11 @@ const rock = document.querySelector('#Rock');
 const paper = document.querySelector('#Paper');
 const scissors = document.querySelector('#Scissors');
 
+const score = document.querySelector('.score');
+const winLose = document.querySelector('.win-lose');
+   
+
+
 
 rock.addEventListener('click', () => {
     getHumanChoice = 'Rock'
@@ -53,7 +58,7 @@ function getHumanChoice (choice) {
 let humanScore = 0;
 let computerScore = 0;
 
-
+  
 function playGame(){
     
 
@@ -66,6 +71,14 @@ function playGame(){
     let result = versusChoice(gameComputer, gameHuman);
     console.log('Computer chose ' + gameComputer + ' and you chose ' + gameHuman + ' so...');
     console.log(result);
+    //
+
+
+    score.textContent = `Your Score: ${humanScore} and Bot Score: ${computerScore}`
+
+  
+
+
 
     //Scoring System:
     if (result.includes(`won`)) {
@@ -74,10 +87,10 @@ function playGame(){
     else if (result.includes('lose')) {
         computerScore++;
     }
+    //
+    
 
-
-    console.log(`Your Score: ${humanScore} and Bot Score: ${computerScore}`)
-
+    //IF player or computer reaches 5 score:
     if (humanScore == 5) {
         console.log('Game over!')
         console.log(`Final Score -> You: ${humanScore} ` + `Bot: ${computerScore}`)
@@ -92,7 +105,7 @@ function playGame(){
         humanScore = 0;
         computerScore = 0;
     }
-    
+    //
 }
 
 
