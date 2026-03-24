@@ -15,7 +15,7 @@ const score = document.querySelector('.score');
 const scoreInfo = document.querySelector('.scoreInfo');
 const rpsCompare = document.querySelector('.rpsCompare');
 const winLose = document.querySelector('.winLose');
-   
+const infos = document.querySelector('.infos');   
 
 
 
@@ -87,36 +87,22 @@ function playGame(){
 
 
     //IF player or computer reaches 5 score:
-    if (humanScore == 5) {
-        rpsCompare.textContent = '';
-        scoreInfo.textContent = '';
-
-
-        const gameOver = document.createElement('div');
-        gameOver.createTextNode = 'Game over!';
-        infos.appendChild(gameOver);
+    if (humanScore == 5 || computerScore == 5) {
+        
         winLose.textContent = `Final Score -> You: ${humanScore} ` + `Bot: ${computerScore}`;
-
-        humanScore = 0;
-        computerScore = 0;
 
        
-    }
-    else if (computerScore == 5) {
-        rpsCompare.textContent = '';
-        scoreInfo.textContent = '';
-
-
-        const gameOver = document.createElement('div');
-        gameOver.createTextNode = 'Game over!';
-        infos.appendChild(gameOver);
-        winLose.textContent = `Final Score -> You: ${humanScore} ` + `Bot: ${computerScore}`;
-
         humanScore = 0;
         computerScore = 0;
+        rpsCompare.textContent = '';
+        scoreInfo.textContent = '';
+        score.textContent = '';
 
-        
+        const gameOver = document.createElement('div');
+        gameOver.textContent = 'Game over!';
+        infos.appendChild(gameOver);
     }
+  
     ////////////////////////////////
 
     
