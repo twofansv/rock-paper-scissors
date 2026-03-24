@@ -90,22 +90,43 @@ function playGame(){
     if (humanScore == 5 || computerScore == 5) {
         
         winLose.textContent = `Final Score -> You: ${humanScore} ` + `Bot: ${computerScore}`;
+        const whoWon = document.createElement('div');
 
-       
+        if (humanScore >= 5) {
+            whoWon.textContent = 'You won!';
+            whoWon.style.color = 'green';
+        }
+        else {
+            whoWon.textContent = 'You lose!';
+            whoWon.style.color = 'red';
+        }
+            infos.appendChild(whoWon);
+
+        
+        setTimeout(() => {
+            whoWon.remove();
+        }, 2000)
+
+
+
         humanScore = 0;
         computerScore = 0;
         rpsCompare.textContent = '';
         scoreInfo.textContent = '';
         score.textContent = '';
-
+        
         const gameOver = document.createElement('div');
         gameOver.textContent = 'Game over!';
         infos.appendChild(gameOver);
+
+        setTimeout(() => {
+            gameOver.remove();
+        }, 2000)
+       
     }
   
     ////////////////////////////////
 
-    
 }
 
 
